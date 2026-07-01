@@ -1,6 +1,6 @@
-# Sistema de Gestión de Tickets (Ticketera)
+# 🔑 Generador Automático de Contraseñas Seguras
 
-Este proyecto es el **Trabajo Integrador Final** desarrollado para el curso **Inicial de Python** dictado en **Tecno3F**. Consiste en una aplicación de consola interactiva pensada para simular un centro de soporte técnico o atención al cliente, permitiendo dar de alta incidentes, generar códigos de seguimiento automáticos y consultar la información almacenada en tiempo real.
+Este proyecto es el **Trabajo Integrador Final** desarrollado para el curso **Inicial de Python** dictado en **Tecno3F**. Consiste en una aplicación interactiva de consola que permite a los usuarios diseñar y generar contraseñas personalizadas según sus necesidades de seguridad, seleccionando diferentes tipos de caracteres y longitudes.
 
 ---
 
@@ -14,28 +14,29 @@ El desarrollo de este sistema fue realizado de forma colaborativa por:
 
 ## 🚀 Características Principales
 
-El programa cuenta con un flujo dinámico que simula un entorno real y cumple con los siguientes requerimientos:
-1.  **Menú Principal Interactivo:** Un panel inicial con validación de entradas numéricas para navegar entre las opciones de administración y la salida segura del sistema.
-2.  **Módulo de Alta de Tickets:** * Captura datos clave del usuario: *Nombre*, *Sector*, *Asunto* y detalle del *Problema*.
-    * Genera de forma automática un **ID único de ticket** utilizando números aleatorios acotados (entre 1000 y 9999).
-    * Cuenta con bucles de control internos para agilizar la carga consecutiva de tickets sin necesidad de recargar la aplicación o pasar obligatoriamente por el menú principal.
-3.  **Módulo de Consulta (Leer Ticket):** * Permite ingresar un número de ticket y buscar de forma instantánea si el registro existe utilizando estructuras indexadas eficientes (Diccionarios).
-    * Muestra los detalles completos del incidente o advierte de forma clara si el número ingresado no coincide con ningún registro activo.
-4.  **Finalización de Sesión Protegida:** Un sistema que exige doble confirmación del usuario antes de cerrar de manera definitiva la ejecución en la terminal.
+El programa ofrece una interfaz fluida en la terminal y cuenta con los siguientes módulos de control:
+1.  **Menú de Selección de Seguridad:** Un panel interactivo que clasifica el tipo de contraseña deseada en cuatro categorías:
+    * Solo letras (Seguridad básica).
+    * Solo números (Ideal para PINs numéricos).
+    * Letras y números (Seguridad intermedia).
+    * Letras, números y caracteres especiales (Máxima seguridad).
+2.  **Validación Robusta de Longitud:** El sistema solicita al usuario la cantidad de caracteres deseados y valida que sea un número entero estrictamente mayor a 0 utilizando controles lógicos avanzados, previniendo fallos en la aplicación si se ingresan textos de forma errónea.
+3.  **Generación Aleatoria Dinámica:** Utiliza algoritmos de aleatoriedad para seleccionar de forma equitativa componentes del grupo de caracteres seleccionados, garantizando combinaciones únicas y seguras en cada ejecución.
+4.  **Bucle de Continuidad Controlado:** Una vez generada la clave, el programa se frena de manera obligatoria para consultar si se desea generar otra contraseña o salir, evitando la sobreexposición repetitiva del menú principal en pantalla.
 
 ---
 
-## Conceptos de Python Aplicados
+##  Conceptos de Python Aplicados
 
-Para la estructura y lógica interna de este trabajo, implementamos y consolidamos las herramientas esenciales aprendidas a lo largo de la cursada:
-* **Estructuras de Control de Flujo:** Uso intensivo de bucles infinitos controlados (`while True`) combinados con declaraciones `break` y `continue`.
-* **Estructuras de Datos Estructuradas:** Colecciones dinámicas de tipo **Diccionario** (`dict`) para almacenar cada ticket de forma persistente en memoria asignando parejas de *clave-valor*.
-* **Modularización mediante Funciones:** Bloques de código independientes (`def`) para el alta, lectura y maquetado visual del menú, facilitando un código limpio, legible y reutilizable.
-* **Validación de Datos:** Uso de métodos embebidos como `.strip()` para limpiar entradas vacías y `.isdigit()` para asegurar la correcta conversión de tipos de datos de texto a enteros.
+Para el diseño de este software, aplicamos los conocimientos clave adquiridos durante el cuatrimestre:
+* **Librerías Nativas (`random` y `string`):** Uso de `random.choice` para la selección impredecible de caracteres y las constantes complejas de `string` (`ascii_letters`, `digits`, `punctuation`).
+* **Bucles Anidados Estructurados:** Implementación de ciclos infinitos controlados (`while True`) combinados con banderas lógicas (`True/False`) para el control de la interfaz visual.
+* **Comprensión de Listas y Métodos de Cadenas:** Uso del método `''.join()` estructurado sobre un generador dinámico para unificar de forma eficiente los caracteres seleccionados.
+* **Filtrado Exclusivo de Datos:** Uso de `.strip()`, `.lower()` y `.isdigit()` para sanitizar las entradas ingresadas por teclado, logrando un programa limpio y libre de errores.
 
 ---
 
-## Instrucciones de Ejecución
+##  Instrucciones de Ejecución
 
 Para correr este programa de forma local en tu computadora, asegurate de tener instalado **Python 3.x** y realizá los siguientes pasos:
 
